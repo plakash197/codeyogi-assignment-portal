@@ -3,7 +3,7 @@ import Welcome from './Welcome';
 import { Route, Routes } from 'react-router-dom';
 import MentorForm from './MentorForm';
 import StudentLogin from './StudentLogin';
-import CreateAccount from './CreateAccount'
+import CreateAccount from './CreateAccount';
 import MentorDash from './MentorDashboard';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <Route index element={<Welcome />} />
         <Route path="/mentor/login" element={<MentorForm />} />
         <Route path="/student/login" element={<StudentLogin />} />
-        <Route path="/create/account" element={<CreateAccount/>} />
+        <Route path="/create/account" element={<CreateAccount />} />
         <Route path="/mentor/dashboard" element={<MentorDash />} />
       </Routes>
     </div>

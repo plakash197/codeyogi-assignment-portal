@@ -1,8 +1,29 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+type CredentialResponse = {
+  credential?: string;
+};
+
+type GoogleIdentityServices = {
+  accounts: {
+    id: {
+      initialize: (options: {
+        client_id: string;
+        callback: (response: CredentialResponse) => void;
+      }) => void;
+      renderButton: (
+        parent: HTMLElement | null,
+        options: { theme: string; size: string },
+      ) => void;
+    };
+  };
+};
+
+declare const google: GoogleIdentityServices;
+
 function CreateAccount() {
-  const handleResponse = (response) => {
+  const handleResponse = (response: CredentialResponse) => {
     console.log(response);
     if(response?.credential) {
       window.location.href="/mentor/dashboard"
