@@ -52,7 +52,7 @@ function MentorForm() {
             <div className="flex flex-col gap-4">
               <input
                 className="h-[50px] border-2 border-gray-600 px-3 py-2 border-box w-full rounded-[99px] text-lg bg-white"
-                type="Email / Username"
+                type="text"
                 placeholder="Enter email"
                 onChange={(event) => setEmail(event.target.value.toLocaleLowerCase())}
                 value={email}
