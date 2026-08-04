@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 type CredentialResponse = {
   credential?: string;
@@ -23,10 +23,11 @@ type GoogleIdentityServices = {
 declare const google: GoogleIdentityServices;
 
 function CreateAccount() {
+  const navigate = useNavigate();
   const handleResponse = (response: CredentialResponse) => {
     console.log(response);
     if(response?.credential) {
-      window.location.href="/mentor/dashboard"
+      navigate('/mentor/dashboard');
     }
   };
 
