@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
 interface CreateAccountProps {
-  name?: string;
-  handleLoginToSwitch?: () => void;
-  loginTrue?: boolean;
+  name: string;
+  handleLoginToSwitch: () => void;
+  loginTrue: () => void;
 }
 
 type CredentialResponse = {
@@ -27,7 +27,7 @@ type GoogleIdentityServices = {
 
 declare const google: GoogleIdentityServices;
 
-function CreateAccount({ name, handleLoginToSwitch, loginTrue }) {
+function CreateAccount({ name, handleLoginToSwitch, loginTrue }: CreateAccountProps) {
   const [userEmail, setUserEmail] = useState('');
   const [userPass, setUserPass] = useState('');
   const [userName, setUserName] = useState('');
