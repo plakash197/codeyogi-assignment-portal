@@ -51,10 +51,17 @@ function LoginForm(props) {
         existingUsers.push(newUser);
         localStorage.setItem('allUsers', JSON.stringify(existingUsers));
       }
+      const userInfo = {
+        name: userData.name,
+        email: userData.email,
+        picture: userData.picture,
+        loginTime: new Date().toISOString(),
+        role: props.name.toLowerCase(),
+      };
 
       alert('Login Successfully!');
-      setIsLogin(true);
-      setUserData(foundUser);
+      setUserData(userInfo);
+      setIsLogin(true)
     }
   };
 
