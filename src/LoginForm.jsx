@@ -168,8 +168,9 @@ function LoginForm(props) {
     setCreate(false);
   }
 
-  function setLoginTrue() {
+  function setLoginTrue(userInfor) {
     setIsLogin(true);
+    setUserData(userInfor)
   }
 
   function backToLogin() {
