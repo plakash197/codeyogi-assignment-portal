@@ -81,7 +81,7 @@ function CreateAccount({ name, handleLoginToSwitch, loginTrue }: CreateAccountPr
         localStorage.setItem('allUsers', JSON.stringify(existingUsers));
         alert('Google Account Successfully Created!');
       }
-      loginTrue()
+      loginTrue(newUser)
     }
   };
 
