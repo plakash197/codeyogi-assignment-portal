@@ -147,6 +147,10 @@ function LoginForm(props) {
     setIsLogin(false)
   }
 
+  function setLoginTrue() {
+    setIsLogin(true)
+  }
+
   if (isLogin) {
     if (props.name.toLowerCase() === 'mentor') {
       return <MentorDashboard handleLogin={backToLogin} data={userData}/>;
@@ -159,6 +163,7 @@ function LoginForm(props) {
       <CreateAccount
         name={props.name}
         handleLoginToSwitch={handleBackToLogin}
+        setLoginTrue={setLoginTrue}
       />
     );
   } else {
