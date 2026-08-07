@@ -82,11 +82,7 @@ function CreateAccount({ name, handleLoginToSwitch }: CreateAccountProps) {
         localStorage.setItem('allUsers', JSON.stringify(existingUsers));
         alert('Google Account Successfully Created!');
       }
-      if (name.toLowerCase() === 'mentor') {
-        navigate('/mentor/dashboard');
-      } else {
-        navigate('/student/dashboard');
-      }
+      setLoginTrue()
     }
   };
 
