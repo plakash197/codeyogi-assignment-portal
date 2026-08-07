@@ -1,4 +1,4 @@
-# CodeYogi Assignment Portal 🚀
+# Assignment Portal 🚀
 
 Maine yeh project ek aisi web application ke roop mein banaya hai jahan Mentors aur Students aasani se assignments create, submit aur manage kar sakte hain. Is project ka main maqsad ek seamless workflow provide karna hai jahan mentors task assign karein aur students apne project links (GitHub/Google Drive) ke zariye submit karein.
 
