@@ -27,7 +27,7 @@ type CreateAccountProps = {
   handleLoginToSwitch: () => void;
 };
 
-function CreateAccount({ name, handleLoginToSwitch }: CreateAccountProps) {
+function CreateAccount({ name, handleLoginToSwitch, setLoginTrue }: CreateAccountProps) {
   const [userEmail, setUserEmail] = useState('');
   const [userPass, setUserPass] = useState('');
   const [userName, setUserName] = useState('');
