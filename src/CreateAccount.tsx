@@ -22,7 +22,12 @@ type GoogleIdentityServices = {
 
 declare const google: GoogleIdentityServices;
 
-function CreateAccount({ name, handleLoginToSwitch }) {
+type CreateAccountProps = {
+  name: string;
+  handleLoginToSwitch: () => void;
+};
+
+function CreateAccount({ name, handleLoginToSwitch }: CreateAccountProps) {
   const [userEmail, setUserEmail] = useState('');
   const [userPass, setUserPass] = useState('');
   const [userName, setUserName] = useState('');
