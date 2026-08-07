@@ -1,5 +1,11 @@
 import { useEffect, useState } from 'react';
 
+interface CreateAccountProps {
+  name?: string;
+  handleLoginToSwitch?: () => void;
+  loginTrue?: boolean;
+}
+
 type CredentialResponse = {
   credential?: string;
 };
