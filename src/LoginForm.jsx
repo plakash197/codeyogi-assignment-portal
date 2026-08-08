@@ -61,8 +61,13 @@ function LoginForm(props) {
         localStorage.setItem('allUsers', JSON.stringify(existingUsers));
         alert('Google Account Successfully Created!');
       }
+      
+      if (newUser.role.toLowerCase() === props.name.toLowerCase()) {
       setUserData(newUser)
       setIsLogin(true)
+      } else {
+        alert('This user is registered in other role')
+      }
     }
   }
 
