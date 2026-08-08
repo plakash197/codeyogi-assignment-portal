@@ -27,43 +27,44 @@ function LoginForm(props) {
       );
 
       const userData = JSON.parse(jsonPayload);
-      const existingUsers = JSON.parse(
-        localStorage.getItem('allUsers') || '[]'
+      const manualUserList = JSON.parse(
+        localStorage.getItem('manualUser') || '[]'
+      );
+      const isManualExist = manualUserList.some(
+        (u: any) => u.email === userData.email
       );
 
-      const foundUser = existingUsers.find((u) => u.email === userData.email);
-
-      if (foundUser) {
-        if (foundUser.role.toLowerCase() !== props.name.toLowerCase()) {
-          alert(
-            `This email is registered as a ${foundUser.role}. You can't login here!`
-          );
-          return;
-        }
-      } else {
-        const newUser = {
-          name: userData.name,
-          email: userData.email,
-          picture: userData.picture,
-          loginTime: new Date().toISOString(),
-          role: props.name.toLowerCase(),
-        };
-        existingUsers.push(newUser);
-        localStorage.setItem('allUsers', JSON.stringify(existingUsers));
+      if (isManualExist) {
+        alert(
+          'Yeh email manually registered hai! Kripya email aur password daalkar login page se login karein.'
+        );
+        return;
       }
-      const userInfo = {
+
+      const newUser = {
         name: userData.name,
         email: userData.email,
         picture: userData.picture,
         loginTime: new Date().toISOString(),
-        role: props.name.toLowerCase(),
+        role: name,
       };
 
-      alert('Login Successfully!');
-      setUserData(userInfo);
+      const existingUsers = JSON.parse(
+        localStorage.getItem('allUsers') || '[]'
+      );
+      const userExists = existingUsers.some(
+        (u: any) => u.email === newUser.email
+      );
+
+      if (!userExists) {
+        existingUsers.push(newUser);
+        localStorage.setItem('allUsers', JSON.stringify(existingUsers));
+        alert('Google Account Successfully Created!');
+      }
+      setUserData(newUser)
       setIsLogin(true)
     }
-  };
+  }
 
   useEffect(() => {
     if (window.google) {
