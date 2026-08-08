@@ -31,7 +31,7 @@ function LoginForm(props) {
         localStorage.getItem('manualUser') || '[]'
       );
       const isManualExist = manualUserList.some(
-        (u: any) => u.email === userData.email
+        (u) => u.email === userData.email
       );
 
       if (isManualExist) {
@@ -53,7 +53,7 @@ function LoginForm(props) {
         localStorage.getItem('allUsers') || '[]'
       );
       const userExists = existingUsers.some(
-        (u: any) => u.email === newUser.email
+        (u) => u.email === newUser.email
       );
 
       if (!userExists) {
