@@ -1,9 +1,17 @@
 import { useEffect, useState } from 'react';
 
+type NewUser = {
+  name: string;
+  email: string;
+  picture?: string;
+  loginTime: string;
+  role: string;
+};
+
 interface CreateAccountProps {
   name: string;
   handleLoginToSwitch: () => void;
-  loginTrue: () => void;
+  loginTrue: (user: NewUser) => void;
 }
 
 type CredentialResponse = {
