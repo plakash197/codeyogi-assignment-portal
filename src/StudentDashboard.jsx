@@ -199,7 +199,7 @@ function StudentDashboard({ data, handleLogin }) {
               <p className="text-sm font-medium text-gray-300">
                 Role:{' '}
                 <span className="text-teal-400 capitalize">
-                  {student.role || 'Mentor'}
+                  {student.role || 'Student'}
                 </span>
               </p>
               <p className="text-sm font-medium text-gray-300">
