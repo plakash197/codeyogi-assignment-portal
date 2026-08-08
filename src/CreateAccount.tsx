@@ -89,7 +89,7 @@ function CreateAccount({ name, handleLoginToSwitch, loginTrue }: CreateAccountPr
         localStorage.setItem('allUsers', JSON.stringify(existingUsers));
         alert('Google Account Successfully Created!');
       }
-      if (newUser.role.toLowerCase() === props.name.toLowerCase()) {
+      if (newUser.role.toLowerCase() === name.toLowerCase()) {
       loginTrue(newUser)
       } else {
         alert('This user is registered in other role')
