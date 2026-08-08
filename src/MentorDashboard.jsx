@@ -384,7 +384,7 @@ function MentorDashboard({ data, handleLogin }) {
                         {stu.name || 'Student Name'}
                       </h4>
                       <p className="text-xs text-gray-400 truncate">
-                        ID/Email: {stu.id}
+                        ID/Email: **********
                       </p>
                       <span className="inline-block mt-2 px-2.5 py-0.5 rounded-md text-[10px] font-semibold bg-blue-500/20 text-blue-300">
                         {stu.loginType}
